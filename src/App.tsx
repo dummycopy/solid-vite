@@ -1,9 +1,15 @@
-import { Component, createSignal } from 'solid-js';
+import { Router,useRoutes } from '@solidjs/router'
+import routes from './router'
 
-const App: Component = () => {
-  const [count, setCount] = createSignal(0);
+const App = () => {
 
-  return <div>你好</div>;
+  const Routes  = useRoutes(routes);
+
+  return (
+    <Router>
+      <Routes />
+    </Router>
+  )
 };
 
-export default App;
+export default App
